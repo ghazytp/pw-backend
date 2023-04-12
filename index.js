@@ -1,7 +1,3 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
-
 const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
@@ -38,7 +34,7 @@ app.post("/upload-pdf", upload.single("pdf"), (req, res) => {
 
 app.get('/download-pdf', (req, res) => {
   const file = `${__dirname}/uploads/Ghazy_Prihanda_Resume.pdf`;
-  res.download(file, {message: 'hello'});
+  res.download(file, {message: 'Successfull Download'});
 });
 
 app.get("/", async (req, res, next) => {
